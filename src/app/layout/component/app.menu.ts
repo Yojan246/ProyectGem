@@ -21,11 +21,11 @@ export class AppMenu {
     ngOnInit() {
         this.model = [
             {
-                label: 'Home',
+                label: 'Bienvenido al Sistema',
                 items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }]
             },
             {
-                label: 'UI Components',
+                label: 'Administrativo GEM',
                 items: [
                     { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout'] },
                     { label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input'] },
@@ -44,56 +44,62 @@ export class AppMenu {
                     { label: 'Misc', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/misc'] }
                 ]
             },
+           {
+  label: 'Monitoreo GEM',
+  icon: 'pi pi-fw pi-briefcase',
+  routerLink: ['/monitoreo/bitacora-formulario'],  // <-- una sola vez y con coma al final
+  items: [
+    {
+      label: 'Landing',
+      icon: 'pi pi-fw pi-globe',
+      routerLink: ['/landing']
+    },
+    {
+      label: 'Bitácora Formulario',
+      icon: 'pi pi-fw pi-file',
+      routerLink: ['/monitoreo/bitacora-formulario']
+    },
+    {
+      label: 'Auth',
+      icon: 'pi pi-fw pi-user',
+      items: [
+        {
+          label: 'Login',
+          icon: 'pi pi-fw pi-sign-in',
+          routerLink: ['/auth/login']
+        },
+        {
+          label: 'Error',
+          icon: 'pi pi-fw pi-times-circle',
+          routerLink: ['/auth/error']
+        },
+        {
+          label: 'Access Denied',
+          icon: 'pi pi-fw pi-lock',
+          routerLink: ['/auth/access']
+        }
+      ]
+    },
+    {
+      label: 'Crud',
+      icon: 'pi pi-fw pi-pencil',
+      routerLink: ['/pages/crud']
+    },
+    {
+      label: 'Not Found',
+      icon: 'pi pi-fw pi-exclamation-circle',
+      routerLink: ['/pages/notfound']
+    },
+    {
+      label: 'Empty',
+      icon: 'pi pi-fw pi-circle-off',
+      routerLink: ['/pages/empty']
+    }
+  ]
+
+},
             {
-                label: 'Pages',
-                icon: 'pi pi-fw pi-briefcase',
-                routerLink: ['/pages'],
-                items: [
-                    {
-                        label: 'Landing',
-                        icon: 'pi pi-fw pi-globe',
-                        routerLink: ['/landing']
-                    },
-                    {
-                        label: 'Auth',
-                        icon: 'pi pi-fw pi-user',
-                        items: [
-                            {
-                                label: 'Login',
-                                icon: 'pi pi-fw pi-sign-in',
-                                routerLink: ['/auth/login']
-                            },
-                            {
-                                label: 'Error',
-                                icon: 'pi pi-fw pi-times-circle',
-                                routerLink: ['/auth/error']
-                            },
-                            {
-                                label: 'Access Denied',
-                                icon: 'pi pi-fw pi-lock',
-                                routerLink: ['/auth/access']
-                            }
-                        ]
-                    },
-                    {
-                        label: 'Crud',
-                        icon: 'pi pi-fw pi-pencil',
-                        routerLink: ['/pages/crud']
-                    },
-                    {
-                        label: 'Not Found',
-                        icon: 'pi pi-fw pi-exclamation-circle',
-                        routerLink: ['/pages/notfound']
-                    },
-                    {
-                        label: 'Empty',
-                        icon: 'pi pi-fw pi-circle-off',
-                        routerLink: ['/pages/empty']
-                    }
-                ]
-            },
-            {
-                label: 'Hierarchy',
+                label: 'Gastos y Liquidaciones GEM',
                 items: [
                     {
                         label: 'Submenu 1',
