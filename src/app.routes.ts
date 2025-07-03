@@ -12,7 +12,7 @@ export const appRoutes: Routes = [
     children: [
       { path: '', component: Dashboard },
 
-      // UIKit (export default)
+      // UIKit
       {
         path: 'uikit',
         loadChildren: () =>
@@ -21,14 +21,12 @@ export const appRoutes: Routes = [
 
       { path: 'documentation', component: Documentation },
 
-      // Pages (export default)
+      // Pages
       {
         path: 'pages',
         loadChildren: () =>
           import('./app/pages/pages.routes').then(m => m.default)
       },
-
-
 
       // Bitácora Formulario
       {
@@ -36,18 +34,28 @@ export const appRoutes: Routes = [
         loadComponent: () =>
           import('./app/Monitoreo/pages/bitacora-formulario/bitacora-formulario.component')
             .then(m => m.BitacoraFormularioComponent)
+      },
+
+      // Información del Operador
+      {
+         path: 'monitoreo/informacion-operador',
+  loadComponent: () =>
+    import('./app/Monitoreo/Documentos/Operadores/informacion-operador/informacion-operador.component')
+      .then(m => m.InformacionOperadorComponent)
       }
     ]
   },
+
   { path: 'landing', component: Landing },
   { path: 'notfound', component: Notfound },
 
-  // Auth (export default)
+  // Auth
   {
     path: 'auth',
     loadChildren: () =>
       import('./app/pages/auth/auth.routes').then(m => m.default)
   },
 
+  // Fallback
   { path: '**', redirectTo: '/notfound' }
 ];
