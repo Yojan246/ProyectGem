@@ -36,7 +36,7 @@ export class AppMenu {
             {
                 label: 'Monitoreo GEM',
                 icon: 'pi pi-fw pi-briefcase',
-                routerLink: ['/monitoreo/bitacora-formulario'],
+                
                 items: [
                     {
                         label: 'Landing',
@@ -44,9 +44,9 @@ export class AppMenu {
                         routerLink: ['/landing']
                     },
                     {
-                        label: 'Bitácora Formulario',
+                        label: 'Bitácora General',
                         icon: 'pi pi-fw pi-file',
-                        routerLink: ['/monitoreo/bitacora-formulario']
+                        routerLink: ['/monitoreo/bitacora-General']
                     },
                     {
                         label: 'Documentos',
@@ -67,8 +67,8 @@ export class AppMenu {
                                 label: 'Unidades',
                                 icon: 'pi pi-fw pi-bookmark',
                                 items: [
-                                    { label: 'Alta de Unidades',       icon: 'pi pi-fw pi-bookmark' },
-                                    { label: 'Documentación Técnica',   icon: 'pi pi-fw pi-bookmark' },
+                                    { label: 'awdad',       icon: 'pi pi-fw pi-bookmark' },
+                                    { label: 'Equipos',   icon: 'pi pi-fw pi-bookmark' },
                                     { label: 'Gastos de Mantenimiento', icon: 'pi pi-fw pi-bookmark' }
                                 ]
                             }

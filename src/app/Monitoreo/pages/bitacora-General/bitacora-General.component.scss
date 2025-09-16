@@ -1,0 +1,40 @@
+/* ===============================
+   ESTILOS PARA EL DESPLEGABLE DE <mat-select>
+   =============================== */
+
+/* 
+  ::ng-deep 
+  Permite que estos estilos afecten componentes hijos encapsulados de Angular,
+  como los internos de Angular Material. Se usa porque Angular aplica
+  ViewEncapsulation que normalmente aísla los estilos.
+*/
+::ng-deep {
+
+  /* 
+    .cdk-overlay-pane .mat-mdc-select-panel
+    Se aplica al panel desplegable del <mat-select>, es decir, la "caja" 
+    que aparece cuando abres el select.
+  */
+  .cdk-overlay-pane .mat-mdc-select-panel {
+    background-color: white !important;  /* Fondo blanco para todo el panel */
+    color: black !important;             /* Texto negro en todo el panel */
+  }
+
+  /* 
+    .cdk-overlay-pane .mat-mdc-option
+    Cada opción dentro del select.
+  */
+  .cdk-overlay-pane .mat-mdc-option {
+    background-color: rgb(255, 255, 255) !important;  /* Fondo blanco para cada opción */
+    color: black !important;             /* Texto negro para cada opción */
+  }
+
+  /* 
+    .cdk-overlay-pane .mat-mdc-option:hover
+    Aplica cuando el usuario pasa el cursor sobre una opción.
+  */
+  .cdk-overlay-pane .mat-mdc-option:hover {
+    background-color: #f0f0f0 !important; /* Fondo gris claro al hacer hover */
+  }
+
+}

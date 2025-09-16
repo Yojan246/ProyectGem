@@ -10,14 +10,15 @@ import { CommonModule } from '@angular/common';
 })
 export class InformacionOperadorComponent {
   operadores = [
-   {
+    {
       nombre: 'Mauricio Galindo Rodriguez',
       licencia: 'MAGAWWE534',
       fechaNacimiento: '1877-06-15',
       correo: 'Mauga@gmail.com',
       curp: 'CURP000000MAURICIO',
       telefono: '555-123-4567',
-      deoUrl: null as string | null
+      deoUrl: null as string | null,
+      fotoUrl: null as string | null
     },
     {
       nombre: 'Bogar Mendoza',
@@ -26,7 +27,8 @@ export class InformacionOperadorComponent {
       correo: 'ejemplo@correo.com',
       curp: 'CURP000000EJEMPLO',
       telefono: '555-987-6543',
-      deoUrl: null as string | null
+      deoUrl: null,
+      fotoUrl: null
     },
     {
       nombre: 'Alejandro Ramos',
@@ -35,7 +37,8 @@ export class InformacionOperadorComponent {
       correo: 'alejandro.ramos@mail.com',
       curp: 'RAMO920418HDFLNL07',
       telefono: '555-321-7654',
-      deoUrl: null
+      deoUrl: null,
+      fotoUrl: null
     },
     {
       nombre: 'Cristian Arguelles',
@@ -44,7 +47,8 @@ export class InformacionOperadorComponent {
       correo: 'cristian.arguelles@mail.com',
       curp: 'ARGC870930HDFNRN05',
       telefono: '555-654-1234',
-      deoUrl: null
+      deoUrl: null,
+      fotoUrl: null
     },
     {
       nombre: 'Adan Marquez',
@@ -53,7 +57,8 @@ export class InformacionOperadorComponent {
       correo: 'adan.marquez@mail.com',
       curp: 'MAQA901212HDFTRD02',
       telefono: '555-789-4561',
-      deoUrl: null
+      deoUrl: null,
+      fotoUrl: null
     },
     {
       nombre: 'Joaquin Torres',
@@ -62,7 +67,8 @@ export class InformacionOperadorComponent {
       correo: 'joaquin.torres@mail.com',
       curp: 'TORJ850722HDFSPN08',
       telefono: '555-852-9630',
-      deoUrl: null
+      deoUrl: null,
+      fotoUrl: null
     },
     {
       nombre: 'Jacobo Lopez',
@@ -71,7 +77,8 @@ export class InformacionOperadorComponent {
       correo: 'jacobo.lopez@mail.com',
       curp: 'LOPJ950309HDFDZN06',
       telefono: '555-369-1470',
-      deoUrl: null
+      deoUrl: null,
+      fotoUrl: null
     }
   ];
 
@@ -98,5 +105,21 @@ export class InformacionOperadorComponent {
     link.href = operador.deoUrl;
     link.download = `${operador.nombre}-DEO.pdf`;
     link.click();
+  }
+
+  cambiarFoto(event: Event, operador: any) {
+    const fileInput = event.target as HTMLInputElement;
+    const file = fileInput.files?.[0];
+
+    if (file && file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        operador.fotoUrl = reader.result as string;
+        console.log(`Foto cargada para ${operador.nombre}`);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      alert('Por favor selecciona una imagen válida (JPG, PNG, etc.).');
+    }
   }
 }

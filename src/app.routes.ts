@@ -30,11 +30,16 @@ export const appRoutes: Routes = [
 
       // Bitácora Formulario
       {
-        path: 'monitoreo/bitacora-formulario',
-        loadComponent: () =>
-          import('./app/Monitoreo/pages/bitacora-formulario/bitacora-formulario.component')
-            .then(m => m.BitacoraFormularioComponent)
-      },
+  path: 'monitoreo',
+  children: [
+    {
+      path: 'bitacora-General',
+      loadComponent: () => import('./app/Monitoreo/pages/bitacora-General/bitacora-General.component')
+        .then(m => m.BitacoraGeneralComponent)
+    }
+  ]
+}
+,
 
       // Información del Operador
       {

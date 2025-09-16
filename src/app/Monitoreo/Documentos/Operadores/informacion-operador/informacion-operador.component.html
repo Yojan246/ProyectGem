@@ -1,13 +1,25 @@
 <div *ngFor="let operador of operadores" class="bg-white rounded-xl shadow-md p-5 border border-gray-200">
   <div class="flex items-center mb-4">
-    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 text-xl font-bold">
-      {{ operador.nombre.charAt(0) }}
+    <!-- FOTO DEL OPERADOR -->
+    <div class="w-16 h-16 rounded-full overflow-hidden bg-gray-200 border border-gray-300">
+      <img
+        *ngIf="operador.fotoUrl"
+        [src]="operador.fotoUrl"
+        alt="Foto de {{ operador.nombre }}"
+        class="w-full h-full object-cover"
+      >
+      <div *ngIf="!operador.fotoUrl" class="w-full h-full flex items-center justify-center text-gray-500 text-xl font-bold">
+        {{ operador.nombre.charAt(0) }}
+      </div>
     </div>
+
+    <!-- NOMBRE -->
     <div class="ml-4">
       <h2 class="text-lg font-semibold text-gray-800">{{ operador.nombre }}</h2>
     </div>
   </div>
 
+  <!-- DATOS -->
   <ul class="text-sm text-gray-700 space-y-1">
     <li><strong>Licencia:</strong> {{ operador.licencia }}</li>
     <li><strong>Fecha de Nacimiento:</strong> {{ operador.fechaNacimiento }}</li>
@@ -16,8 +28,8 @@
     <li><strong>Teléfono:</strong> {{ operador.telefono }}</li>
   </ul>
 
-  <!-- Botones -->
-  <div class="mt-4 flex space-x-3 items-center">
+  <!-- BOTONES -->
+  <div class="mt-4 flex flex-wrap gap-3 items-center">
     <!-- Cargar DEO -->
     <label class="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm">
       📤 Cargar DEO
@@ -32,5 +44,11 @@
     >
       📥 Descargar DEO
     </button>
+
+    <!-- Cambiar Foto -->
+    <label class="cursor-pointer bg-gray-600 hover:bg-gray-700 text-white px-3 py-1 rounded text-sm">
+      🖼 Cambiar Foto
+      <input type="file" accept="image/*" (change)="cambiarFoto($event, operador)" hidden>
+    </label>
   </div>
 </div>

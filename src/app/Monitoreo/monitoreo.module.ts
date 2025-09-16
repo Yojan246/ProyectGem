@@ -15,13 +15,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
 
 import { MonitoreoRoutingModule } from './monitoreo-routing.module';
-import { BitacoraFormularioComponent } from './pages/bitacora-formulario/bitacora-formulario.component';
+import { BitacoraGeneralComponent } from './pages/bitacora-General/bitacora-General.component';
 // O la ruta donde esté el componente
 
 @NgModule({
-  declarations: [
-    BitacoraFormularioComponent,  // Aquí declaras el componente del formulario
-  ],
+  declarations: [], // o elimina completamente si no hay componentes no-standalone
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -37,3 +35,4 @@ import { BitacoraFormularioComponent } from './pages/bitacora-formulario/bitacor
   ]
 })
 export class MonitoreoModule { }
+
