@@ -1,0 +1,97 @@
+/* Contenedor general */
+.p-4 {
+  font-family: 'Inter', sans-serif;
+  background-color: #f3f4f6; /* gris claro de fondo */
+}
+
+/* Botones */
+button {
+  transition: all 0.3s ease;
+}
+
+/* Formulario */
+form {
+  label {
+    display: block;
+    font-weight: 600;
+    color: #374151; // gris oscuro
+  }
+
+  input, textarea {
+    outline: none;
+    transition: border-color 0.3s;
+    &:focus {
+      border-color: #2563eb; // azul al enfocar
+      box-shadow: 0 0 0 1px #2563eb;
+    }
+  }
+}
+
+/* Botones del formulario */
+button[type="submit"] {
+  background-color: #16a34a; // verde
+  &:hover {
+    background-color: #15803d;
+  }
+}
+
+button[type="button"] {
+  background-color: #6b7280; // gris
+  &:hover {
+    background-color: #4b5563;
+  }
+}
+
+/* Plantilla Carta Porte */
+.plantilla-carta {
+  background-color: #ffffff;
+  border: 1px solid #9ca3af;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 2rem;
+  border-radius: 0.75rem;
+
+  h2 {
+    font-size: 1.75rem;
+    color: #1e3a8a; // azul fuerte para título
+    font-weight: 700;
+    text-align: center;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+
+    td {
+      border: 1px solid #d1d5db; // gris claro
+      padding: 0.5rem 0.75rem;
+      vertical-align: top;
+
+      &.font-semibold {
+        font-weight: 600;
+        background-color: #f9fafb; // gris muy claro para celdas título
+      }
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f3f4f6; // gris claro alternado
+    }
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .plantilla-carta table td {
+    display: block;
+    width: 100%;
+  }
+
+  .plantilla-carta table tr {
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+}

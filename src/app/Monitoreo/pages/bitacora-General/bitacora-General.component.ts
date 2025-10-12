@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bitacora-General',
@@ -45,13 +46,16 @@ export class BitacoraGeneralComponent implements OnInit {
     tipoMovimiento: ''
   };
 
+  // Columnas de la tabla
   columnas: string[] = [
-    'estado','tipoMovimiento','fecha','hora','operador',
+    'opciones','estado','tipoMovimiento','fecha','hora','operador',
     'unidad','equipo','contenedor','cliente','estatus','descripcion'
   ];
 
   estadosDisponibles: string[] = ['activo','pendiente','programado','inactivo'];
   tiposMovimientoDisponibles: string[] = ['Viajes','Maniobras en puerto','Vacíos','Movimientos locales'];
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.registros = [
@@ -148,8 +152,19 @@ export class BitacoraGeneralComponent implements OnInit {
   }
 
   // ---------------------------
-  // Tabla dinámica según botón
+  // Funciones para la nueva columna Opciones
   // ---------------------------
+  editarRegistro(registro: any) {
+    this.mostrarFormulario = true;
+    this.nuevoRegistro = { ...registro };
+  }
+generarCartaPorte(registro: any) {
+  // navegar de forma absoluta al child bajo /monitoreo
+  this.router.navigate(['/monitoreo/cartaporte', registro.contenedor]);
+
+
+  }
+
   seleccionarTipo(tipo: string) {
     // Función de ejemplo, mantiene tu lógica anterior
   }

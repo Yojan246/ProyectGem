@@ -1,7 +1,7 @@
 <div class="p-4 bg-gray-100 min-h-screen flex justify-center">
 
   <!-- Contenedor tipo hoja blanca -->
-  <div class="bg-white w-full max-w-7xl p-6 rounded-lg shadow-lg">
+  <div class="bg-white w-full max-w-9xl p-6 rounded-lg shadow-lg">
 
     <!-- Header -->
     <div class="mb-4">
@@ -180,6 +180,15 @@
           <th mat-header-cell *matHeaderCellDef class="p-2 border">Descripción</th>
           <td mat-cell *matCellDef="let registro" class="p-2 border">
             {{ registro.descripcion }}
+          </td>
+        </ng-container>
+
+        <!-- Columna Opciones -->
+        <ng-container matColumnDef="opciones">
+          <th mat-header-cell *matHeaderCellDef class="p-2 border">Opciones</th>
+          <td mat-cell *matCellDef="let registro" class="p-2 border">
+            <button (click)="editarRegistro(registro)" class="bg-blue-600 text-white px-2 py-1 rounded hover:bg-blue-700 mr-2">Editar</button>
+            <button (click)="generarCartaPorte(registro)" class="bg-green-600 text-white px-2 py-1 rounded hover:bg-green-700">Generar Carta Porte</button>
           </td>
         </ng-container>
 

@@ -46,7 +46,7 @@ export class AppMenu {
                     {
                         label: 'Bitácora General',
                         icon: 'pi pi-fw pi-file',
-                        routerLink: ['/monitoreo/bitacora-General']
+                        routerLink: ['/monitoreo/bitacora-general']
                     },
                     {
                         label: 'Documentos',

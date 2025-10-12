@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-// Importa ReactiveFormsModule para formularios reactivos
+// Formularios reactivos
 import { ReactiveFormsModule } from '@angular/forms';
 
-// Importa Angular Material modules que usarás
+// Angular Material
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -14,12 +14,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
 
+// Routing
 import { MonitoreoRoutingModule } from './monitoreo-routing.module';
-import { BitacoraGeneralComponent } from './pages/bitacora-General/bitacora-General.component';
-// O la ruta donde esté el componente
 
 @NgModule({
-  declarations: [], // o elimina completamente si no hay componentes no-standalone
+  declarations: [], // Sin declarar componentes standalone
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -35,4 +34,3 @@ import { BitacoraGeneralComponent } from './pages/bitacora-General/bitacora-Gene
   ]
 })
 export class MonitoreoModule { }
-
